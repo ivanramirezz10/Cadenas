@@ -1,17 +1,29 @@
+import java.util.Scanner;
+
 public class LongitudI {
-    public static void main(String[] args) {
-        String frase = "Hola cómo estás hoy";
-        int k = 10;
-        System.out.println(comprueba(frase,k));
-    }
     public static int comprueba(String frase, int k) {
+
+        int contador = 0;
         String[] palabras = frase.split("\\s+");
-        int cuantas= 0;
         for (int i = 0; i < palabras.length; i++) {
             if (palabras[i].length() == k) {
-                cuantas++;
+                contador++;
             }
         }
-        return cuantas;
+        return contador;
     }
-}
+
+    public class LongitudIt {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            String frase;
+            int k;
+            System.out.println("Introduce una frase:");
+            frase = sc.nextLine();
+            System.out.println("Introduce una longitud:");
+            k = sc.nextInt();
+            System.out.println("Hay " + comprueba(frase, k) + " palabras con una longitud de " + k + " caracteres");
+        }
+
+    }}
+
